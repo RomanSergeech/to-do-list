@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { createPortal } from "react-dom"
 import { getDate } from "./utils"
 import { TaskForm } from "../task-form/TaskForm"
 import { classNames } from "@/shared/utils"
@@ -109,7 +110,9 @@ const EditTaskButton = ({ task }: EditTaskButtonProps) => {
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.6665 11.3423L7.6085 11.3323L14.0298 4.97226C14.2818 4.72026 14.4205 4.38559 14.4205 4.02959C14.4205 3.67359 14.2818 3.33893 14.0298 3.08693L12.9725 2.02959C12.4685 1.52559 11.5892 1.52826 11.0892 2.02759L4.6665 8.38893V11.3423ZM12.0298 2.97226L13.0892 4.02759L12.0245 5.08226L10.9672 4.02559L12.0298 2.97226ZM5.99984 8.94493L10.0198 4.96293L11.0772 6.02026L7.05784 10.0009L5.99984 10.0043V8.94493Z" fill="black"/><path d="M3.33333 14H12.6667C13.402 14 14 13.402 14 12.6667V6.888L12.6667 8.22133V12.6667H5.43867C5.42133 12.6667 5.40333 12.6733 5.386 12.6733C5.364 12.6733 5.342 12.6673 5.31933 12.6667H3.33333V3.33333H7.898L9.23133 2H3.33333C2.598 2 2 2.598 2 3.33333V12.6667C2 13.402 2.598 14 3.33333 14Z" fill="#0D0D0D"/></svg>
     </button>
 
-    {active && <Modal task={task} setActive={setActive} />}
+    {active &&
+      createPortal(<Modal task={task} setActive={setActive} />, document.body)
+    }
   </>)
 }
 

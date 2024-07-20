@@ -29,7 +29,7 @@ const Filters = () => {
 
       <div className={c.filters_wrapper} >
         {FILTER_ELEMENTS.map(elem => (
-          <FilterElement elem={elem} checked={sort[elem.key]} />
+          <FilterElement key={elem.key} elem={elem} checked={sort[elem.key]} />
         ))}
       </div>
 
@@ -49,7 +49,7 @@ const FilterElement = ({ elem, checked }: FilterElementProps) => {
 
   return (
     <div className={c.check_wrapper} >
-      <Checkbox checked={checked} onClick={checkHandler} />
+      <Checkbox checked={checked} onChange={checkHandler} />
       <p>{elem.text}</p>
     </div>
   )
