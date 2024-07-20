@@ -1,0 +1,44 @@
+
+.checkbox {
+	display: grid;
+
+	label, input {
+		grid-row: 1/2;
+		grid-column: 1/2;
+	}
+
+	input {
+		width: 22px;
+		height: 22px;
+		opacity: 0;
+		cursor: pointer;
+
+      &:focus-visible + label {
+         outline: 1px solid var(--color-text);
+      }
+	}
+
+	input:checked + label svg {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	input:checked + label {
+		background-color: var(--color-light-green);
+	}
+
+	label {
+		width: 22px;
+		height: 22px;
+    border: 1px solid #222222;
+    border-radius: 5px;
+	}
+
+	svg {
+		opacity: 0;
+		visibility: hidden;
+    pointer-events: none;
+		transition: all .3s ease 0s;
+    transform: translate(3px, -2px);
+	}
+}

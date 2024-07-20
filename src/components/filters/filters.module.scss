@@ -1,0 +1,21 @@
+
+.filters {
+  display: grid;
+  gap: 20px;
+}
+
+.filters_wrapper {
+  display: grid;
+  gap: 15px;
+}
+
+.check_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  p {
+    pointer-events: none;
+    user-select: none;
+  }
+}

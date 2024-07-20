@@ -1,0 +1,30 @@
+
+.button {
+   display: block;
+   position: relative;
+   
+   height: max-content;
+   width: max-content;
+   min-width: 180px;
+   border-radius: 8px;
+   border-width: 1px;
+   border-style: solid;
+   border-color: var(--color-green);
+   padding: 16px;
+
+   font-size: 14px;
+   text-align: center;
+
+   user-select: none;
+
+   transition: all .3s ease 0s;
+
+  &:hover {
+    background-color: var(--color-light-green);
+  }
+
+   &:active {
+      transform: scale(0.95);
+   }
+
+}
